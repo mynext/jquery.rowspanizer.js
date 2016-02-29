@@ -20,7 +20,7 @@ $('table').rowspanizer({vertical_align: 'middle'});
 
 ## Notes
 
-* Requires jQuery 1.6+.
+* Requires jQuery 1.7+.
 
 ## License
 
