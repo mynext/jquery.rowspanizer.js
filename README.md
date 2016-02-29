@@ -1,6 +1,8 @@
 # jquery.rowspanizer.js
 Dynamic rowspan based on the content of the table
 
+![Example](http://i.imgur.com/qLRHlzV.png)
+
 ### Demo
 
 <http://codepen.io/marcosesperon/pen/MyWNGx>
