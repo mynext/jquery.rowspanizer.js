@@ -20,6 +20,12 @@ By default, `vertical-align: top` css style will be added. You can override defa
 $('table').rowspanizer({vertical_align: 'middle'});
 ```
 
+You can define columns to rowspanize:
+
+```js
+$('table').rowspanizer({columns: [0,1,2]});
+```
+
 ## Notes
 
 * Requires jQuery 1.7+.

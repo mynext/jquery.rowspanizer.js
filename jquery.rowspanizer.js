@@ -14,7 +14,8 @@
 
     var rowspanizer = "rowspanizer",
       defaults = {
-        vertical_align: "top"
+        vertical_align: "top",
+        columns: []
       };
 
     function f ( element, options ) {
@@ -38,16 +39,18 @@
 
         $table.find('tr').each(function (r, tr) {
           $(this).find('td').each(function (d, td) {
-            var $td = $(td);
-            var v_dato = $td.html();
-            if(typeof arr[d] != 'undefined' && 'dato' in arr[d] && arr[d].dato == v_dato) {
-              var rs = arr[d].elem.data('rowspan');
-              if(rs == 'undefined' || isNaN(rs)) rs = 1;
-              arr[d].elem.data('rowspan', parseInt(rs) + 1).addClass('rowspan-combine');
-              $td.addClass('rowspan-remove');
-            } else {
-              arr[d] = {dato: v_dato, elem: $td};
-            };
+            if (_this.settings.columns.length === 0 || _this.settings.columns.indexOf(d) !== -1) {
+              var $td = $(td);
+              var v_dato = $td.html();
+              if(typeof arr[d] != 'undefined' && 'dato' in arr[d] && arr[d].dato == v_dato) {
+                var rs = arr[d].elem.data('rowspan');
+                if(rs == 'undefined' || isNaN(rs)) rs = 1;
+                arr[d].elem.data('rowspan', parseInt(rs) + 1).addClass('rowspan-combine');
+                $td.addClass('rowspan-remove');
+              } else {
+                arr[d] = {dato: v_dato, elem: $td};
+              };
+            }
           });
         });
 
