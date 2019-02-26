@@ -4,7 +4,7 @@
  *
  * Copyright 2011, 2015 Marcos Esperón
  * Released under the MIT license
- * 
+ *
  * https://github.com/jquery-boilerplate/boilerplate/
  */
 
@@ -15,6 +15,7 @@
     var rowspanizer = "rowspanizer",
       defaults = {
         vertical_align: "top",
+        hide_cells: false,
         columns: []
       };
 
@@ -59,7 +60,11 @@
           $this.attr('rowspan', $this.data('rowspan')).css({'vertical-align': _this.settings.vertical_align});
         });
 
-        $('.rowspan-remove').remove();
+        if (_this.settings.hide_cells){
+        	$table.find('.rowspan-remove').hide();
+        }else{
+        	$table.find('.rowspan-remove').remove();
+        }
 
       }
     } );
