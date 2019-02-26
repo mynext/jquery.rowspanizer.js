@@ -26,6 +26,12 @@ You can define columns to rowspanize:
 $('table').rowspanizer({columns: [0,1,2]});
 ```
 
+You can even choose not to remove cells, but only hide them:
+
+```js
+$('table').rowspanizer({hide_cells: true});
+```
+
 ## Notes
 
 * Requires jQuery 1.7+.
